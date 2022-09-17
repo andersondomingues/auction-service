@@ -22,16 +22,15 @@ async function createAuction(event, context) {
     createdAt: now.toISOString(),
   }
 
-  // try {
-  await dynamodb.put({
-    TableName: process.env.AUCTIONS_TABLE_NAME,
-    Item: auction,
-  }).promise();
-
-  // } catch (error) {
-  //   console.error(error);
-  //   throw new createError.InternalServerError(error);
-  // }
+  try {
+    await dynamodb.put({
+      TableName: process.env.AUCTIONS_TABLE_NAME,
+      Item: auction,
+    }).promise();
+  } catch (error) {
+    console.error(error);
+    throw new createError.InternalServerError(error);
+  }
 
   return {
     statusCode: 201,
