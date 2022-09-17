@@ -1,17 +1,27 @@
-# Codingly.io: Base Serverless Framework Template
+# Serverless Framework Template for AWS Lambda 
 
-https://codingly.io
+* Base template: https://github.com/codingly-io/sls-base (from https://codingly.io)
+* Updated to work with Node16
+* Removed unecessary plugins
+* Fixed package.json to comply with the module syntax
+* Minimal (almost none) code reworking
+* Added some scripts for common problems and fixes
 
-## What's included
-* Folder structure used consistently across our projects.
-* [serverless-pseudo-parameters plugin](https://www.npmjs.com/package/serverless-pseudo-parameters): Allows you to take advantage of CloudFormation Pseudo Parameters.
-* [serverless-bundle plugin](https://www.npmjs.com/package/serverless-pseudo-parameters): Bundler based on the serverless-webpack plugin - requires zero configuration and fully compatible with ES6/ES7 features.
+## Requirements
+```
+Coming soon!
+```
 
-## Getting started
+## Getting started (Node 12 instructions)
 ```
 sls create --name YOUR_PROJECT_NAME --template-url https://github.com/codingly-io/sls-base
 cd YOUR_PROJECT_NAME
 npm install
 ```
+
+## Getting started (Node 16 instructions)
+```
+coming soon!
+``` 
 
 You are ready to go!
