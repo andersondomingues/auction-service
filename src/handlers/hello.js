@@ -1,3 +1,5 @@
+import commonMiddleware from "../../lib/commonMiddleware.js";
+
 async function hello(event, context) {
   return {
     statusCode: 200,
@@ -5,6 +7,6 @@ async function hello(event, context) {
   };
 }
 
-export const handler = hello;
+export const handler = commonMiddleware(hello);
 
 
