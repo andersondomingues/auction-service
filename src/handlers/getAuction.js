@@ -3,11 +3,10 @@ import AWS from "aws-sdk";
 import commonMiddleware from "../../lib/commonMiddleware.js";
 import createError from 'http-errors';
 
+export async function getAuctionById (id) {
 
-async function getAuction(event, context) {
   const dynamodb = new AWS.DynamoDB.DocumentClient();
-  const { id } = event.pathParameters;
-  
+
   let auction;
 
   try {
@@ -26,6 +25,16 @@ async function getAuction(event, context) {
   if (!auction) {
     throw new createError.NotFound(`Auctions with ID "${id}" not found!`)
   }
+
+  return auction;
+}
+
+async function getAuction(event, context) {
+  
+  const dynamodb = new AWS.DynamoDB.DocumentClient();
+  const { id } = event.pathParameters;
+  
+  let auction = await getAuctionById(id);
 
   return {
     statusCode: 201,
