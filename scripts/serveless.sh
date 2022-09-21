@@ -14,3 +14,6 @@ sls deploy --function hello
 
 # remove the entire stack
 sls remove
+
+# tailing logs for a single function
+sls logs --function processAuctions -t
